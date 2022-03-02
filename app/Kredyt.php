@@ -7,11 +7,11 @@
 
 <form action="<?php print(_APP_URL);?>/app/Srodek.php" method="post">
 <label>Kwota:</label>
-<input type="Number" id="kwota" name="kwo" value="<?php echo $k; ?>" min="1"></input><br>
+<input type="Number" id="kwota" name="kwo" value="<?php echo $k; ?>" min="1" placeholder="1-ile chcesz"></input><br>
 <label>Lata:</label>
-<input type="Number" id="rok" name="lat" value="<?php echo $l; ?>" min="1" max="30"></input><br>
+<input type="Number" id="rok" name="lat" value="<?php echo $l; ?>" min="1" max="30" placeholder="1-30"></input><br>
 <label>Procenty:</label>
-<input type="Number" id="procent" name="pro" value="<?php echo $p; ?>" min="0" max="100"></input>%<br>
+<input type="Number" id="procent" name="pro" value="<?php echo $p; ?>" min="0" max="100" placeholder="0-100"></input>%<br>
 <input type="submit" value="Oblicz"></input>
 </form>
 
