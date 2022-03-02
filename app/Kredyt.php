@@ -25,4 +25,4 @@ echo 'Podatek: '.$kwota.' zl';
 
 
 </body>
-</html>
+</html> 
