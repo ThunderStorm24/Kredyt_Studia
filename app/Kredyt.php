@@ -38,5 +38,8 @@ echo 'BRAK PODATKU';
 }
 ?>
 
+<br><a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php" class="pure-button">Kolejna chroniona strona</a><br>
+<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
+
 </body>
 </html> 

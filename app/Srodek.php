@@ -1,6 +1,8 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
 
+include _ROOT_PATH.'/app/security/check.php';
+
 $k = $_POST ['kwo'];
 $l = $_POST ['lat'];
 $p = $_POST ['pro'];
@@ -14,7 +16,7 @@ if($k==null || $l==null || $p==null){
 	echo "</font>";
 //Jesli nie bedzie puste, wykonaj wszystkie operacje
 	}else{
-
+		
 $k = intval($k);
 $l = intval($l);
 $p = intval($p);
