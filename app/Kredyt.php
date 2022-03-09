@@ -3,8 +3,13 @@
 <meta charset="utf-8" />
 <title>Kredyt</title>
 </head>
-<body>
+<body style="background-color: #99CCFF">
 
+<?php echo "<p style='text-align: right'> Jesteś zalogowany jako: <b>".$role."</b>"; ?><br>
+<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Wyloguj</a></p>
+
+<div style="background-color: #FFFFFF">
+<h1>Kredyt - kalkulator</h1>
 <form action="<?php print(_APP_URL);?>/app/Srodek.php" method="post">
 <label>Kwota:</label>
 <input type="Number" id="kwota" name="kwo" value="<?php echo $k; ?>" min="1" placeholder="1-ile chcesz"></input><br>
@@ -38,8 +43,8 @@ echo 'BRAK PODATKU';
 }
 ?>
 
-<br><a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php" class="pure-button">Kolejna chroniona strona</a><br>
-<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
+<br><br><a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php">Kolejna chroniona strona</a>
+</div>
 
 </body>
 </html> 
