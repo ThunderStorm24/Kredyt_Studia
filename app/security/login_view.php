@@ -5,13 +5,13 @@
 </head>
 <body>
 
-<form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post" class="pure-form pure-form stacked">
+<form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post">
 <legend>Logowanie</legend>
 login:<br>
 <input type="text" name="login" value="<?php print($form['login']) ?>" /><br>
 password:<br>
 <input type="password" name="password" /><br>
-<input type="submit" value="Zaloguj" class="pure-button pure-button-primary"/>
+<input type="submit" value="Zaloguj"/>
 </form>
 
 <?php
