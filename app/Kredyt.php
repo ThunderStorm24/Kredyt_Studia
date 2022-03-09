@@ -19,7 +19,7 @@
 //Jeśli są błędy, wyświetl je
 if(isset ($message)){
     foreach($message as $key => $msg){
-    echo $msg;
+    echo "<li>".$msg."</li>";
     }
 }
 //Jesli jest jakis podatek
