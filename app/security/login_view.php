@@ -7,9 +7,9 @@
 
 <form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post">
 <legend>Logowanie</legend>
-login:<br>
+<b>login:</b><br>
 <input type="text" name="login" value="<?php print($form['login']) ?>" /><br>
-password:<br>
+<b>password:</b><br>
 <input type="password" name="password" /><br>
 <input type="submit" value="Zaloguj"/>
 </form>
