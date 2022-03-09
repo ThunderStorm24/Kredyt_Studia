@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
     <title>Logowanie</title>
 </head>
-<body>
+<body style="background-color: #99CCFF">
 
 <form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post">
 <legend>Logowanie</legend>
@@ -19,7 +19,7 @@ password:<br>
 if (isset($messages)) {
 	if (count ( $messages ) > 0) {
 		foreach ( $messages as $key => $msg ) {
-			echo '<li>'.$msg.'</li>';
+			echo '<li><font color="red">'.$msg.'</font></li>';
 		}
 		echo '</ol>';
 	}

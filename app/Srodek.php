@@ -21,16 +21,16 @@ $l = intval($l);
 $p = intval($p);
 $lata=$l*12;
 
-//Podatek 0% czy jest jakis?
+//Admin moze dac kwote wieksza od 10000
 if($k>10000){
-	if($role=='admin'){
-		echo "Admin";
-	}else{
+	if($role!='admin'){
 		$message [] = "<font color='red'> Nie jestes adminem, nie mozesz uzyc kwoty > 10 000! </font>";
 		include 'Kredyt.php';
 		return false;
 	}
 }
+
+//Podatek 0% czy jest jakis?
 	if($p==0){
 		$wynik=$k/$lata;
 		}else{

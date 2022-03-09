@@ -7,10 +7,16 @@ include _ROOT_PATH.'/app/security/check.php';
     <meta charset="utf-8" />
     <title>Chroniona strona</title>
 </head>
-<body>
-<a href="<?php print(_APP_ROOT); ?>/app/Kredyt.php" class="pure-button">Powrot do kalkulatora</a>
-<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php" class="pure-button pure-button-active">Wyloguj</a>
+<body style="background-color: #99CCFF">
+
+<div style="background-color: #FFFFFF">
+
+<a href="<?php print(_APP_ROOT); ?>/app/Kredyt.php">Powrot do kalkulatora</a>
+<a href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Wyloguj</a>
 
 <h3>To jest inna chroniona strona aplikacji internetowej</h3>
+
+</div>
+
 </body>
 </html>
