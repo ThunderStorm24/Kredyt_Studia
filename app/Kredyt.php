@@ -30,15 +30,13 @@ if(isset ($message)){
 //Jesli jest jakis podatek
 if(isset ($suma) && isset ($wynik) && isset ($lata) && isset ($kwota)){
 echo 'Do splacenia w sumie: '.$suma.' zl<br>';
-echo 'Rata co miesiąc: '.$wynik.' zl<br>'; 
-echo 'Przez: '.$lata.' miesiecy<br>'; 
+echo 'Rata co miesiąc: '.$wynik.' zl przez: '.$lata.' miesiecy<br>'; 
 echo 'Podatek: '.$kwota.' zl';
 }
 //Jesli nie ma podatku
 if(isset($wynik) && isset($lata) && !isset($suma) && !isset($kwota)){
 echo 'Do splacenia w sumie: '.$k.' zl<br>';   
-echo 'Rata co miesiąc: '.$wynik.' zl<br>';  
-echo 'Przez: '.$lata.' miesiecy<br>'; 
+echo 'Rata co miesiąc: '.$wynik.' zl przez: '.$lata.' miesiecy<br>';  
 echo 'BRAK PODATKU';
 }
 ?>
@@ -46,5 +44,19 @@ echo 'BRAK PODATKU';
 <br><br><a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php">Kolejna chroniona strona</a>
 </div>
 
+<div style="background-color: #FFFFFF">
+<h2><p style="text-align:center">Opis</p></h2>
+<p style="margin-left:15px;">Uzytkownik ma mniejsze uprawnienia od admina. Admin moze wykonywac obliczenia zwiazane z kredytem na wieksza skale. Uzytkownik natomiast ma pewne ograniczenia. Jesli masz jakis problem pisz do supportu pod adresem kredyt24hnadobe@gmail.com lub dzwon do nas pod numer 505 213 777. Za wszelkie problemy i niedogodności przepraszamy. Ponizej dane ktore moze wprowadzac uzytkownik a admin:</p>
+<ol> <b> USER </b>
+    <li>Limit kwoty: 1-10000</li>
+    <li>Limit lat: 1-10</li>
+    <li>Limit Procent: 0-50%</li>
+</ol>
+<ol> <b> ADMIN* </b>
+    <li>Limit kwoty: 1-ile chcesz</li>
+    <li>Limit lat: 1-30</li>
+    <li>Limit Procent: 0-100%</li>
+</ol><br>
+</div>
 </body>
 </html> 
