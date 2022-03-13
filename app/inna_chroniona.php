@@ -15,7 +15,6 @@ include _ROOT_PATH.'/app/security/check.php';
 <a href="<?php print(_APP_ROOT); ?>/app/security/logout.php">Wyloguj</a>
 
 <h3>To jest inna chroniona strona aplikacji internetowej</h3>
-
 </div>
 
 </body>

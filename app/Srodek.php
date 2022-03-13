@@ -1,8 +1,8 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
-
 include _ROOT_PATH.'/app/security/check.php';
 
+//Porbanie parametrow z formularza
 $k = $_POST ['kwo'];
 $l = $_POST ['lat'];
 $p = $_POST ['pro'];
@@ -23,7 +23,7 @@ $l = intval($l);
 $p = intval($p);
 $lata=$l*12;
 
-//Admin ma inne uprawnienia niz uzytkownik (kwota > 10000 lata > 10 i procenty > 50 w porownaniu do uzytkownika) (panel admina/uzytkownika)
+//Admin ma inne uprawnienia niz uzytkownik (kwota > 10000, lata > 10 i procenty > 50 w porownaniu do uzytkownika) (panel admina/uzytkownika)
 if($k>10000 || $l>10 || $p>50){
 	if($role!='admin'){
 		$message [] = "<font color='red'><b>BLEDNE DANE DLA UZYTKOWNIKA!!!</b></font><br>";
@@ -37,8 +37,10 @@ if($k>10000 || $l>10 || $p>50){
 
 //Podatek 0% czy jest jakis? (Przeszlo cala walidacje, przechodzimy do programu)
 	if($p==0){
+		//Podatek 0%
 		$wynik=$k/$lata;
 		}else{
+		//Podatek 1-100%
 		$kwota=0;
 		$kwota=$p/100*$k;
 		$suma=$k+$kwota;
