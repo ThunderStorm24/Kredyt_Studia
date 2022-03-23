@@ -1,50 +1,67 @@
 <?php
 require_once dirname(__FILE__).'/../config.php';
-include _ROOT_PATH.'/app/security/check.php';
+include $conf->root_path.'/app/security/check.php';
+require_once $conf->root_path.'/app/CalcForm.class.php';
+
+class CalcCtrl {
+
+	private $form;   //dane formularza (do obliczeń i dla widoku)
+
+	public function __construct(){
+		$this->form = new CalcForm();
+	}
 
 //Porbanie parametrow z formularza
-$k = $_POST ['kwo'];
-$l = $_POST ['lat'];
-$p = $_POST ['pro'];
+public function getParams(){
+	$this->form->k = $_POST ['kwo'];
+	$this->form->l = $_POST ['lat'];
+	$this->form->p = $_POST ['pro'];
+}
 
 //Jesli cos bedzie puste, to przypisz bledy do tablicy message (puste pola)
-if($k==null || $l==null || $p==null){
+public function validate() {
+if($this->form->k==null || $this->form->l==null || $this->form->p==null){
 	$message [] = "<font color='red'><b>PUSTE POLA!!!</b></font><br>";
-		if($k==null){$message [] = "<font color='red'> Nie ustawiono kwoty! 💲 </font><br>";}
-		if($l==null){$message [] = "<font color='red'> Nie ustawiono lat! 👴 </font><br>";}
-		if($p==null){$message [] = "<font color='red'> Nie ustawiono procent! 📊 </font><br>";}
-		include 'Kredyt.php';
-		return false;
+		if($this->form->k==null){echo "<font color='red'> Nie ustawiono kwoty! 💲 </font><br>";}
+		if($this->form->l==null){echo "<font color='red'> Nie ustawiono lat! 👴 </font><br>";}
+		if($this->form->p==null){echo "<font color='red'> Nie ustawiono procent! 📊 </font><br>";}
+}else{
+	$this->process();
 }
 
+}
 //Jesli nie bedzie puste, wykonaj wszystkie operacje	
-$k = intval($k);
-$l = intval($l);
-$p = intval($p);
-$lata=$l*12;
-
-//Admin ma inne uprawnienia niz uzytkownik (kwota > 10000, lata > 10 i procenty > 50 w porownaniu do uzytkownika) (panel admina/uzytkownika)
-if($k>10000 || $l>10 || $p>50){
-	if($role!='admin'){
-		$message [] = "<font color='red'><b>BLEDNE DANE DLA UZYTKOWNIKA!!!</b></font><br>";
-		if($k>10000){$message [] = "<font color='red'> Nie jestes adminem, nie mozesz uzyc kwoty wiekszej niz 10 000! </font>";}
-		if($l>10){$message [] = "<font color='red'> Nie jestes adminem, nie mozesz wziasc kredytu na wiecej niz 10 lat! </font>";}
-		if($p>50){$message [] = "<font color='red'> Nie jestes adminem, nie mozesz wziasc kredytu na wiecej niz 50 % podatku </font>";}
-		include 'Kredyt.php';
-		return false;
-	}
-}
+public function process(){
+	$this->form->k = intval($this->form->k);
+	$this->form->l = intval($this->form->l);
+	$this->form->p = intval($this->form->p);
+	$this->form->lata=$this->form->l*12;
 
 //Podatek 0% czy jest jakis? (Przeszlo cala walidacje, przechodzimy do programu)
-	if($p==0){
+	if($this->form->p==0){
 		//Podatek 0%
-		$wynik=$k/$lata;
+		$this->form->wynik=$this->form->k/$this->form->lata;
 		}else{
 		//Podatek 1-100%
-		$kwota=0;
-		$kwota=$p/100*$k;
-		$suma=$k+$kwota;
-		$wynik=($suma)/$lata;
+		$this->form->kwota=0;
+		$this->form->kwota=$this->form->p/100*$this->form->k;
+		$this->form->suma=$this->form->k+$this->form->kwota;
+		$this->form->wynik=($this->form->suma)/$this->form->lata;
 		}
+}
 
-include 'Kredyt.php';
+public function display(){
+//Jesli jest jakis podatek
+if(isset ($this->form->suma) && isset ($this->form->wynik) && isset ($this->form->lata) && isset ($this->form->kwota)){
+echo 'Do splacenia w sumie: '.$this->form->suma.' zl<br>';
+echo 'Rata co miesiąc: '.$this->form->wynik.' zl przez: '.$this->form->lata.' miesiecy<br>'; 
+echo 'Podatek: '.$this->form->kwota.' zl';
+}
+//Jesli nie ma podatku
+if(isset($this->form->wynik) && isset($this->form->lata) && !isset($this->form->suma) && !isset($this->form->kwota)){
+echo 'Do splacenia w sumie: '.$this->form->k.' zl<br>';   
+echo 'Rata co miesiąc: '.$this->form->wynik.' zl przez: '.$this->form->lata.' miesiecy<br>';  
+echo 'BRAK PODATKU';
+}
+}
+}
