@@ -4,7 +4,7 @@
 <title>Logowanie</title>
 <meta name="Description" content="Opis strony w tym miejscu. Pojawi się w wynikach Google."/>
 <meta name="Keywords" content="słowa kluczowe opisujące Twoją stronę">
-<link rel="stylesheet" type="text/css" href="<?php print(_APP_ROOT); ?>/app/css/stylelogin.css" />
+<link rel="stylesheet" type="text/css" href="<?php print($conf->app_root); ?>/app/css/stylelogin.css" />
 </head>
 
 <body>
@@ -14,7 +14,7 @@
 		 
             <div id="main">
 			
-			<form action="<?php print(_APP_ROOT); ?>/app/security/login.php" method="post">
+			<form action="<?php print($conf->app_root); ?>/app/security/login.php" method="post">
 				<h1>Logowanie</h1><br>
 					<b>login:</b><br>
 					<input type="text" name="login" value="<?php print($form['login']) ?>" /><br><br>

@@ -3,49 +3,41 @@
 <meta charset="utf-8" />
 <title>Kredyt</title>
 
- <link rel="stylesheet" type="text/css" href="<?php print($conf->app_url);?>/app/css/style.css" />
+ <link rel="stylesheet" type="text/css" href="{$conf->app_url}/app/css/style.css" />
  
 </head>
 
 <body>
   <div id="wrapper">
     <div id="logo">
-    <img src="<?php print($conf->app_url);?>/app/images/logo.png" />
+    <img src="{$conf->app_url}/app/images/logo.png" />
     </div>
     <div id="menu">
         <ul>
 			<li><a href="#" class="active">Strona główna</a></li>
-			<li><a href="<?php print($conf->app_url); ?>/app/security/logout.php"><?php echo "Jesteś zalogowany jako: <u>".$role."</u>"; ?><br></a></li>
+			<li><a href="{$conf->app_url}/app/security/logout.php"><?php echo "Jesteś zalogowany jako: <u>".$role."</u>"; ?><br></a></li>
         </ul>
     </div>
     <div id="header">
-		<img src="<?php print($conf->app_url);?>/app/images/bg_head.jpg" style="float: right" />
+		<img src="{$conf->app_url}/app/images/bg_head.jpg" style="float: right" />
     <div id="title_head">    
 	<h2>SEO - Super Extra Oferty!</h2>
     <h3>Kredyt - Kalkulator</h3>
-    <form action="<?php print($conf->app_url);?>/app/calc.php" method="post">
+    <form action="{$conf->app_url}/app/calc.php" method="post">
 	
         <label>Kwota:</label>
-        <input type="Number" id="kwota" name="kwo" value="" min="1" placeholder="1-ile chcesz"></input><br>
+        <input type="Number" id="kwota" name="kwo" value="{$form->k}" min="1" placeholder="1-ile chcesz"></input><br>
 		
         <label>Lata:</label>
-        <input type="Number" id="rok" name="lat" value="" min="1" max="30" placeholder="1-30"></input><br>
+        <input type="Number" id="rok" name="lat" value="{$form->l}" min="1" max="30" placeholder="1-30"></input><br>
 		
         <label>Procenty:</label>
-        <input type="Number" id="procent" name="pro" value="" min="0" max="100" placeholder="0-100"></input>%<br>
+        <input type="Number" id="procent" name="pro" value="{$form->p}" min="0" max="100" placeholder="0-100"></input>%<br>
 		
         <input type="submit" value="Oblicz"></input>
 		
     </form>
 	
-<?php
-if(isset($a)){
-$ctrl = new CalcCtrl();
-$ctrl->getParams(); 
-$ctrl->validate();
-$ctrl->display();
-}
-?>
 
     </div>    
     </div>
