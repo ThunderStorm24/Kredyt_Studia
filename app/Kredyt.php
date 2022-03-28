@@ -23,7 +23,7 @@
     <div id="title_head">    
 	<h2>SEO - Super Extra Oferty!</h2>
     <h3>Kredyt - Kalkulator</h3>
-    <form action="<?php print($conf->app_url);?>/app/calc.php" method="post">
+    <form action="<?php $conf->action_root ?>Kredyt" method="post">
 	
         <label>Kwota:</label>
         <input type="Number" id="kwota" name="kwo" value="" min="1" placeholder="1-ile chcesz"></input><br>

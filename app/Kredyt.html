@@ -15,7 +15,7 @@
     <div id="menu">
         <ul>
 			<li><a href="#" class="active">Strona główna</a></li>
-			<li><a href="{$conf->app_url}/app/security/logout.php">Jesteś zalogowany jako: <u>admin</u><br></a></li>
+			<li><a href="{$conf->app_url}/app/security/logout.php">Jesteś zalogowany!!! <u>Wylogować?</u><br></a></li>
         </ul>
     </div>
     <div id="header">
@@ -23,7 +23,7 @@
     <div id="title_head">    
 	<h2>SEO - Super Extra Oferty!</h2>
     <h3>Kredyt - Kalkulator</h3>
-    <form action="{$conf->app_url}/app/calc.php" method="post">
+    <form action="{$conf->action_root}Kredyt" method="post">
 	
         <label>Kwota:</label>
         <input type="Number" id="kwota" name="kwo" value="{$form->k}" min="1" placeholder="1-ile chcesz"></input><br>
