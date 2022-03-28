@@ -5,7 +5,7 @@ require_once dirname(__FILE__).'/../config.php';
 require_once $conf->root_path.'/app/Srodek.php';
 
 //utwórz obiekt i użyj
-$a=1;
 $ctrl = new CalcCtrl();
-include 'Kredyt.php';
+$ctrl->process();
+
 

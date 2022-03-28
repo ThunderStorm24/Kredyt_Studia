@@ -37,16 +37,6 @@
         <input type="submit" value="Oblicz"></input>
 		
     </form>
-	
-<?php
-if(isset($a)){
-$ctrl = new CalcCtrl();
-$ctrl->getParams(); 
-$ctrl->validate();
-$ctrl->display();
-}
-?>
-
     </div>    
     </div>
     <div id="solid">
