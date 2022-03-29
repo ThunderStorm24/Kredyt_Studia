@@ -1,5 +1,5 @@
 <?php
-require_once dirname(__FILE__).'/../config.php';
+require_once dirname(__FILE__).'/config.php';
 
 
 
@@ -10,7 +10,7 @@ $action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
 switch ($action) {
 	default : // 'Kredyt - view'
 		//Wczytanie srodka programu
-		include_once $conf->root_path.'/app/Srodek.php';
+		include_once $conf->root_path.'/app/controllers/Srodek.php';
 		//Sprawdzenie czy zalogowany
 		include_once $conf->root_path.'/app/security/check.php';
 		//Funkcja generująca widok
@@ -18,7 +18,7 @@ switch ($action) {
 		$ctrl->generateView ();
 	break;
 	case 'Kredyt' :
-		include_once $conf->root_path.'/app/Srodek.php';
+		include_once $conf->root_path.'/app/controllers/Srodek.php';
 		$ctrl = new CalcCtrl ();
 		$ctrl->process ();
 	break;

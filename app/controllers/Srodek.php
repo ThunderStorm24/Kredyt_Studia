@@ -1,9 +1,9 @@
 <?php
-require_once dirname(__FILE__).'/../config.php';
+require_once dirname(__FILE__).'/../../config.php';
 include $conf->root_path.'/app/security/check.php';
-require_once $conf->root_path.'/app/CalcForm.class.php';
+require_once $conf->root_path.'/app/controllers/CalcForm.class.php';
 require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
-require_once $conf->root_path.'/lib/Messages.class.php';
+require_once $conf->root_path.'/core/Messages.class.php';
 
 class CalcCtrl {
 
@@ -68,6 +68,6 @@ public function generateView(){
 		$smarty->assign('form',$this->form);
 		$smarty->assign('msgs',$this->msgs);
 		
-		$smarty->display($conf->root_path.'/app/Kredyt.html');
+		$smarty->display($conf->root_path.'/app/views/Kredyt.html');
 	}
 }

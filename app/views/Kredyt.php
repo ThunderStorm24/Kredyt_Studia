@@ -3,23 +3,23 @@
 <meta charset="utf-8" />
 <title>Kredyt</title>
 
- <link rel="stylesheet" type="text/css" href="<?php print($conf->app_url);?>/app/css/style.css" />
+ <link rel="stylesheet" type="text/css" href="<?php print($conf->app_url);?>/css/style.css" />
  
 </head>
 
 <body>
   <div id="wrapper">
     <div id="logo">
-    <img src="<?php print($conf->app_url);?>/app/images/logo.png" />
+    <img src="<?php print($conf->app_url);?>/images/logo.png" />
     </div>
     <div id="menu">
         <ul>
 			<li><a href="#" class="active">Strona główna</a></li>
-			<li><a href="<?php print($conf->app_url); ?>/app/security/logout.php"><?php echo "Jesteś zalogowany jako: <u>".$role."</u>"; ?><br></a></li>
+			<li><a href="<?php print($conf->app_url); ?>/security/logout.php"><?php echo "Jesteś zalogowany jako: <u>".$role."</u>"; ?><br></a></li>
         </ul>
     </div>
     <div id="header">
-		<img src="<?php print($conf->app_url);?>/app/images/bg_head.jpg" style="float: right" />
+		<img src="<?php print($conf->app_url);?>/images/bg_head.jpg" style="float: right" />
     <div id="title_head">    
 	<h2>SEO - Super Extra Oferty!</h2>
     <h3>Kredyt - Kalkulator</h3>

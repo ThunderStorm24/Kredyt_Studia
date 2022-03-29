@@ -4,7 +4,7 @@
 <title>Logowanie</title>
 <meta name="Description" content="Opis strony w tym miejscu. Pojawi się w wynikach Google."/>
 <meta name="Keywords" content="słowa kluczowe opisujące Twoją stronę">
-<link rel="stylesheet" type="text/css" href="<?php print($conf->app_root); ?>/app/css/stylelogin.css" />
+<link rel="stylesheet" type="text/css" href="<?php print($conf->app_root); ?>/css/stylelogin.css" />
 </head>
 
 <body>

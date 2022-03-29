@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-03-28 21:07:35
+/* Smarty version 3.1.30, created on 2022-03-28 21:34:38
   from "C:\xampp\htdocs\Zadanie1_P\app\Kredyt.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_62420777a59e52_39547991',
+  'unifunc' => 'content_62420dcea0bf25_74488773',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'edf6ccb21f179e66a89c4aaa5b2a788b087133b1' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Zadanie1_P\\app\\Kredyt.html',
-      1 => 1648494248,
+      1 => 1648495765,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62420777a59e52_39547991 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62420dcea0bf25_74488773 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
 <head>
@@ -42,7 +42,7 @@ function content_62420777a59e52_39547991 (Smarty_Internal_Template $_smarty_tpl)
         <ul>
 			<li><a href="#" class="active">Strona główna</a></li>
 			<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/app/security/logout.php">Jesteś zalogowany jako: <u>admin</u><br></a></li>
+/app/security/logout.php">Jesteś zalogowany!!! <u>Wylogować?</u><br></a></li>
         </ul>
     </div>
     <div id="header">
