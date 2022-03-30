@@ -1,18 +1,14 @@
 <?php
-require_once dirname(__FILE__).'/../../config.php';
-include $conf->root_path.'/app/security/check.php';
-require_once $conf->root_path.'/app/controllers/CalcForm.class.php';
-require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
-require_once $conf->root_path.'/core/Messages.class.php';
+
+require_once 'CalcForm.class.php';
+
 
 class CalcCtrl {
 
 	private $form;   //dane formularza (do obliczeń i dla widoku)
-	private $msgs;   //wiadomości dla widoku
 
 	public function __construct(){
 		$this->form = new CalcForm();
-		$this->msgs = new Messages();
 	}
 
 //Porbanie parametrow z formularza
@@ -26,9 +22,9 @@ public function getParams(){
 //Jesli cos bedzie puste, to przypisz bledy do tablicy message (puste pola)
 public function validate() {
 if($this->form->k==null || $this->form->l==null || $this->form->p==null){
-		if($this->form->k==null){$this->msgs->addError('Nie ustawiono kwoty! 💲');}
-		if($this->form->l==null){$this->msgs->addError('Nie ustawiono lat! 👴 ');}
-		if($this->form->p==null){$this->msgs->addError('Nie ustawiono procent! 📊');}
+		if($this->form->k==null){getMessages()->addError('Nie ustawiono kwoty! 💲');}
+		if($this->form->l==null){getMessages()->addError('Nie ustawiono lat! 👴 ');}
+		if($this->form->p==null){getMessages()->addError('Nie ustawiono procent! 📊');}
 }
 
 }
@@ -58,16 +54,12 @@ public function process(){
 public function generateView(){
 		global $conf;
 		
-		$smarty = new Smarty();
-		$smarty->assign('conf',$conf);
-		
-		$smarty->assign('page_title','Kredyt');
-		$smarty->assign('page_description','Aplikacja z jednym "punktem wejścia". Model MVC, w którym jeden główny kontroler używa różnych obiektów kontrolerów w zależności od wybranej akcji - przekazanej parametrem.');
-		$smarty->assign('page_header','Kontroler główny');
+		getSmarty()->assign('page_title','Kredyt');
+		getSmarty()->assign('page_description','Aplikacja z jednym "punktem wejścia". Model MVC, w którym jeden główny kontroler używa różnych obiektów kontrolerów w zależności od wybranej akcji - przekazanej parametrem.');
+		getSmarty()->assign('page_header','Kontroler główny');
 					
-		$smarty->assign('form',$this->form);
-		$smarty->assign('msgs',$this->msgs);
+		getSmarty()->assign('form',$this->form);
 		
-		$smarty->display($conf->root_path.'/app/views/Kredyt.html');
+		getSmarty()->display('Kredyt.html');
 	}
 }

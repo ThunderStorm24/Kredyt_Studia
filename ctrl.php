@@ -1,10 +1,5 @@
 <?php
-require_once dirname(__FILE__).'/config.php';
-
-
-
-// Pobranie nazwy akcji:
-$action = isset($_REQUEST['action']) ? $_REQUEST['action'] : '';
+require_once 'init.php';
 
 // Oraz wykonanie akcji:
 switch ($action) {
