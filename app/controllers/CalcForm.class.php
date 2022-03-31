@@ -1,4 +1,7 @@
 <?php
+
+namespace app\controllers;
+
 class CalcForm {
 	public $k;
 	public $l;

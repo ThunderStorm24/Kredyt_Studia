@@ -1,9 +1,11 @@
 <?php
 
-require_once 'CalcForm.class.php';
+namespace app\controllers;
+
+use app\controllers\CalcForm;
 
 
-class CalcCtrl {
+class SrodekCtrl {
 
 	private $form;   //dane formularza (do obliczeń i dla widoku)
 
