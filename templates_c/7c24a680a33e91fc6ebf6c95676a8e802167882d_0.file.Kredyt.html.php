@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-03-30 19:34:33
+/* Smarty version 3.1.30, created on 2022-04-01 17:44:20
   from "C:\xampp\htdocs\Zadanie1_P\app\views\Kredyt.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_624494a914f101_83912994',
+  'unifunc' => 'content_62471dd4dd8952_34282965',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c24a680a33e91fc6ebf6c95676a8e802167882d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Zadanie1_P\\app\\views\\Kredyt.html',
-      1 => 1648575047,
+      1 => 1648827846,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_624494a914f101_83912994 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62471dd4dd8952_34282965 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
 <head>
@@ -41,8 +41,8 @@ function content_624494a914f101_83912994 (Smarty_Internal_Template $_smarty_tpl)
     <div id="menu">
         <ul>
 			<li><a href="#" class="active">Strona główna</a></li>
-			<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->app_url;?>
-/app/security/logout.php">Jesteś zalogowany!!! <u>Wylogować?</u><br></a></li>
+			<li><a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+logout">Jesteś zalogowany!!! <u>[Wylogować?]</u><br></a></li>
         </ul>
     </div>
     <div id="header">
@@ -89,22 +89,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 <?php }?>
 
     <?php if (isset($_smarty_tpl->tpl_vars['form']->value->suma) && isset($_smarty_tpl->tpl_vars['form']->value->wynik) && isset($_smarty_tpl->tpl_vars['form']->value->lata) && isset($_smarty_tpl->tpl_vars['form']->value->kwota) && ($_smarty_tpl->tpl_vars['msgs']->value->isEmpty())) {?>
-    Do splacenia w sumie: <?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
- zl<br>
-    Rata co miesiąc: <?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
- zl przez: <?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
- miesiecy<br> 
-    Podatek: <?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
- zl
+    Do splacenia w sumie: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->suma;?>
+ zl</b><br>
+    Rata co miesiąc: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
+ zl</b> przez: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
+ miesiecy</b><br> 
+    Podatek: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
+ zl</b>
     <?php }?>
 
     <?php if (isset($_smarty_tpl->tpl_vars['form']->value->wynik) && isset($_smarty_tpl->tpl_vars['form']->value->lata) && !isset($_smarty_tpl->tpl_vars['form']->value->suma) && !isset($_smarty_tpl->tpl_vars['form']->value->kwota) && ($_smarty_tpl->tpl_vars['msgs']->value->isEmpty())) {?>
-    Do splacenia w sumie: <?php echo $_smarty_tpl->tpl_vars['form']->value->k;?>
- zl<br>
-    Rata co miesiąc: <?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
- zl przez: <?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
- miesiecy<br>   
-    BRAK PODATKU
+    Do splacenia w sumie: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->k;?>
+ zl</b><br>
+    Rata co miesiąc: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
+ zl</b> przez: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
+ miesiecy</b><br>  
+    <b>BRAK PODATKU</b>
     <?php }?>
 
     </div>

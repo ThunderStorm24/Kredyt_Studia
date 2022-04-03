@@ -15,7 +15,7 @@
     <div id="menu">
         <ul>
 			<li><a href="#" class="active">Strona główna</a></li>
-			<li><a href="{$conf->app_url}/app/security/logout.php">Jesteś zalogowany!!! <u>Wylogować?</u><br></a></li>
+			<li><a href="{$conf->action_root}logout">Jesteś zalogowany!!! <u>[Wylogować?]</u><br></a></li>
         </ul>
     </div>
     <div id="header">
@@ -49,15 +49,15 @@
 {/if}
 
     {if isset ($form->suma) && isset ($form->wynik) && isset ($form->lata) && isset ($form->kwota) && ($msgs->isEmpty())}
-    Do splacenia w sumie: {$form->kwota} zl<br>
-    Rata co miesiąc: {$form->wynik} zl przez: {$form->lata} miesiecy<br> 
-    Podatek: {$form->kwota} zl
+    Do splacenia w sumie: <b>{$form->suma} zl</b><br>
+    Rata co miesiąc: <b>{$form->wynik} zl</b> przez: <b>{$form->lata} miesiecy</b><br> 
+    Podatek: <b>{$form->kwota} zl</b>
     {/if}
 
     {if isset($form->wynik) && isset($form->lata) && !isset($form->suma) && !isset($form->kwota) && ($msgs->isEmpty())}
-    Do splacenia w sumie: {$form->k} zl<br>
-    Rata co miesiąc: {$form->wynik} zl przez: {$form->lata} miesiecy<br>   
-    BRAK PODATKU
+    Do splacenia w sumie: <b>{$form->k} zl</b><br>
+    Rata co miesiąc: <b>{$form->wynik} zl</b> przez: <b>{$form->lata} miesiecy</b><br>  
+    <b>BRAK PODATKU</b>
     {/if}
 
     </div>

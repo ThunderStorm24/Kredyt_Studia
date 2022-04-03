@@ -4,7 +4,6 @@ namespace app\controllers;
 
 use app\controllers\CalcForm;
 
-
 class SrodekCtrl {
 
 	private $form;   //dane formularza (do obliczeń i dla widoku)
@@ -50,6 +49,7 @@ public function process(){
 		$this->form->suma=$this->form->k+$this->form->kwota;
 		$this->form->wynik=($this->form->suma)/$this->form->lata;
 		}
+		$this->form->wynik = number_format((float) $this->form->wynik, 2, '.', '');
 		$this->generateView();
 }
 
