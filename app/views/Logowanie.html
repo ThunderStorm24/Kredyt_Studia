@@ -27,11 +27,11 @@
 
 				<div id="bledy">
 
-					{if $msgs->isError()}
+				{if $msgs->isError()}
 					{foreach $msgs->getErrors() as $err}
-					{strip}
-						<font color='red'>{$err}<br></font>
-					{/strip}
+						{strip}
+							<font color='red'>{$err}<br></font>
+						{/strip}
 					{/foreach}
 				{/if}
 

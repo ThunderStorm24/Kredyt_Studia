@@ -5,13 +5,13 @@ include 'config.php';
 
 function &getConf(){ global $conf; return $conf; }
 
-//załaduj definicję klasy Messages i stwórz obiekt
+//Ładowanie definicji Messages i stworzenie obiektu msgs
 require_once 'core/Messages.class.php';
 $msgs = new core\Messages();
 
 function &getMessages(){ global $msgs; return $msgs; }
 
-//przygotowanie Smarty, twórz tylko raz
+//Przygotowanie Smarty, twórz tylko raz
 $smarty = null;	
 function &getSmarty(){
 	global $smarty;
@@ -19,7 +19,7 @@ function &getSmarty(){
 		//Smarty i konfigurację i messages
 		include_once 'lib/smarty/Smarty.class.php';
 		$smarty = new Smarty();	
-		//przypisanie konfiguracji a potem mess
+		//przypisanie konfiguracji a potem mess do smarty (getConf());(getMessages());
 		$smarty->assign('conf',getConf());
 		$smarty->assign('msgs',getMessages());
 		//lokalizacja widoków (aby nie podawać ścieżek przy ich załączaniu)

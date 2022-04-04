@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-01 17:44:20
+/* Smarty version 3.1.30, created on 2022-04-04 19:04:23
   from "C:\xampp\htdocs\Zadanie1_P\app\views\Kredyt.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_62471dd4dd8952_34282965',
+  'unifunc' => 'content_624b2517252974_61479772',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c24a680a33e91fc6ebf6c95676a8e802167882d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Zadanie1_P\\app\\views\\Kredyt.html',
-      1 => 1648827846,
+      1 => 1649091862,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62471dd4dd8952_34282965 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624b2517252974_61479772 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
 <head>
@@ -72,40 +72,43 @@ Kredyt" method="post">
 	
 
     </div>   
-<?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
-    <?php
+
+    <p style="margin-left:10px">
+        <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isError()) {?>
+            <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getErrors(), 'err');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['err']->value) {
 ?>
-	<font color='red'><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
+	            <font color='red'><?php echo $_smarty_tpl->tpl_vars['err']->value;?>
 <br></font>
-	<?php
+	        <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
-<?php }?>
+        <?php }?>
 
-    <?php if (isset($_smarty_tpl->tpl_vars['form']->value->suma) && isset($_smarty_tpl->tpl_vars['form']->value->wynik) && isset($_smarty_tpl->tpl_vars['form']->value->lata) && isset($_smarty_tpl->tpl_vars['form']->value->kwota) && ($_smarty_tpl->tpl_vars['msgs']->value->isEmpty())) {?>
-    Do splacenia w sumie: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->suma;?>
+        <?php if (isset($_smarty_tpl->tpl_vars['form']->value->suma) && isset($_smarty_tpl->tpl_vars['form']->value->wynik) && isset($_smarty_tpl->tpl_vars['form']->value->lata) && isset($_smarty_tpl->tpl_vars['form']->value->kwota) && ($_smarty_tpl->tpl_vars['msgs']->value->isEmpty())) {?>
+            Do splacenia w sumie: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->suma;?>
  zl</b><br>
-    Rata co miesiąc: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
+            Rata co miesiąc: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
  zl</b> przez: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
  miesiecy</b><br> 
-    Podatek: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
+            Podatek: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->kwota;?>
  zl</b>
-    <?php }?>
+        <?php }?>
 
-    <?php if (isset($_smarty_tpl->tpl_vars['form']->value->wynik) && isset($_smarty_tpl->tpl_vars['form']->value->lata) && !isset($_smarty_tpl->tpl_vars['form']->value->suma) && !isset($_smarty_tpl->tpl_vars['form']->value->kwota) && ($_smarty_tpl->tpl_vars['msgs']->value->isEmpty())) {?>
-    Do splacenia w sumie: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->k;?>
+        <?php if (isset($_smarty_tpl->tpl_vars['form']->value->wynik) && isset($_smarty_tpl->tpl_vars['form']->value->lata) && !isset($_smarty_tpl->tpl_vars['form']->value->suma) && !isset($_smarty_tpl->tpl_vars['form']->value->kwota) && ($_smarty_tpl->tpl_vars['msgs']->value->isEmpty())) {?>
+            Do splacenia w sumie: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->k;?>
  zl</b><br>
-    Rata co miesiąc: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
+            Rata co miesiąc: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->wynik;?>
  zl</b> przez: <b><?php echo $_smarty_tpl->tpl_vars['form']->value->lata;?>
  miesiecy</b><br>  
-    <b>BRAK PODATKU</b>
-    <?php }?>
+            <b>BRAK PODATKU</b>
+        <?php }?>
+    </p>
 
     </div>
     <div id="solid">

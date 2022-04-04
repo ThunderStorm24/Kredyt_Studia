@@ -40,25 +40,28 @@
 	
 
     </div>   
-{if $msgs->isError()}
-    {foreach $msgs->getErrors() as $err}
-	{strip}
-		<font color='red'>{$err}<br></font>
-	{/strip}
-	{/foreach}
-{/if}
 
-    {if isset ($form->suma) && isset ($form->wynik) && isset ($form->lata) && isset ($form->kwota) && ($msgs->isEmpty())}
-    Do splacenia w sumie: <b>{$form->suma} zl</b><br>
-    Rata co miesiąc: <b>{$form->wynik} zl</b> przez: <b>{$form->lata} miesiecy</b><br> 
-    Podatek: <b>{$form->kwota} zl</b>
-    {/if}
+    <p style="margin-left:10px">
+        {if $msgs->isError()}
+            {foreach $msgs->getErrors() as $err}
+	            {strip}
+	        	    <font color='red'>{$err}<br></font>
+	            {/strip}
+	        {/foreach}
+        {/if}
 
-    {if isset($form->wynik) && isset($form->lata) && !isset($form->suma) && !isset($form->kwota) && ($msgs->isEmpty())}
-    Do splacenia w sumie: <b>{$form->k} zl</b><br>
-    Rata co miesiąc: <b>{$form->wynik} zl</b> przez: <b>{$form->lata} miesiecy</b><br>  
-    <b>BRAK PODATKU</b>
-    {/if}
+        {if isset ($form->suma) && isset ($form->wynik) && isset ($form->lata) && isset ($form->kwota) && ($msgs->isEmpty())}
+            Do splacenia w sumie: <b>{$form->suma} zl</b><br>
+            Rata co miesiąc: <b>{$form->wynik} zl</b> przez: <b>{$form->lata} miesiecy</b><br> 
+            Podatek: <b>{$form->kwota} zl</b>
+        {/if}
+
+        {if isset($form->wynik) && isset($form->lata) && !isset($form->suma) && !isset($form->kwota) && ($msgs->isEmpty())}
+            Do splacenia w sumie: <b>{$form->k} zl</b><br>
+            Rata co miesiąc: <b>{$form->wynik} zl</b> przez: <b>{$form->lata} miesiecy</b><br>  
+            <b>BRAK PODATKU</b>
+        {/if}
+    </p>
 
     </div>
     <div id="solid">

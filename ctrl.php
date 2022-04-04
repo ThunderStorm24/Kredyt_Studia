@@ -11,8 +11,8 @@ switch ($action) {
 		//Funkcja generująca widok
 		$ctrl->generateView ();
 	break;
-	case 'login':
-		$ctrl = new app\security\Login();
+	case 'login': // logowanie
+		$ctrl = new app\security\Login(); //PROGRAM 
 		$ctrl->doLogin();
 	break;
 	case 'logout' : // akcja NIEPUBLICZNA
@@ -20,7 +20,7 @@ switch ($action) {
 		$ctrl = new app\security\Login();
 		$ctrl->doLogout();
 	break;
-	case 'Kredyt' :
+	case 'Kredyt' : //Wykonanie obliczeń oraz wyświetlenie widoku
 		$ctrl = new app\controllers\SrodekCtrl();
 		$ctrl->process ();
 	break;
