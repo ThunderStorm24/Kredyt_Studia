@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2022-04-04 20:45:25
+/* Smarty version 3.1.30, created on 2022-04-05 00:39:16
   from "C:\xampp\htdocs\Zadanie1_P\app\views\Kredyt.html" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_624b3cc5b97d92_85305711',
+  'unifunc' => 'content_624b7394bb26a2_84894316',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7c24a680a33e91fc6ebf6c95676a8e802167882d' => 
     array (
       0 => 'C:\\xampp\\htdocs\\Zadanie1_P\\app\\views\\Kredyt.html',
-      1 => 1649097924,
+      1 => 1649098031,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_624b3cc5b97d92_85305711 (Smarty_Internal_Template $_smarty_tpl) {
+function content_624b7394bb26a2_84894316 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <html>
 <head>
