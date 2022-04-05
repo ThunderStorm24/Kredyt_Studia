@@ -1,27 +1,19 @@
 <?php
 require_once 'init.php';
+getConf()->login_action = 'login';
 
 // Oraz wykonanie akcji:
 switch ($action) {
 	default : // 'Kredyt - view'
-		//Sprawdzenie czy zalogowany
-		include 'check.php';
-		//Wczytanie srodka programu
-		$ctrl = new app\controllers\SrodekCtrl();
-		//Funkcja generująca widok
-		$ctrl->generateView ();
+	control('app\\controllers', 'SrodekCtrl','generateView', ['user','admin']);
 	break;
 	case 'login': // logowanie
-		$ctrl = new app\security\Login(); //PROGRAM 
-		$ctrl->doLogin();
+		control('app\\security', 'Login',	'doLogin');
 	break;
 	case 'logout' : // akcja NIEPUBLICZNA
-		include 'check.php';  // KONTROLA
-		$ctrl = new app\security\Login();
-		$ctrl->doLogout();
+		control('app\\security' , 'Login',	'doLogout',		['user','admin']);
 	break;
 	case 'Kredyt' : //Wykonanie obliczeń oraz wyświetlenie widoku
-		$ctrl = new app\controllers\SrodekCtrl();
-		$ctrl->process ();
+		control(null, 'SrodekCtrl',	'process',		['user','admin']);
 	break;
     }

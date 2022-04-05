@@ -28,6 +28,7 @@ public function loging(){
 		}
 	$user = new User($this->form->login, 'admin');
 	$_SESSION['user'] = serialize($user);
+	addRole($user->role);
 	}
 	else if ($this->form->login == "user" && $this->form->password == "user") {
 		if (session_status() == PHP_SESSION_NONE) {
@@ -35,6 +36,7 @@ public function loging(){
 		}
 	$user = new User($this->form->login, 'user');
 	$_SESSION['user'] = serialize($user);	
+	addRole($user->role);
 	}
 	else
 	{
