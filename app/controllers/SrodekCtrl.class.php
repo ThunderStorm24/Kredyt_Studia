@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\controllers\CalcForm;
+use app\controllers\mysqli;
 
 class SrodekCtrl {
 
@@ -10,6 +11,7 @@ class SrodekCtrl {
 
 	public function __construct(){
 		$this->form = new CalcForm();
+		$this->baz= new Mysqli();
 	}
 
 //Porbanie parametrow z formularza
@@ -50,7 +52,18 @@ public function process(){
 		$this->form->wynik=($this->form->suma)/$this->form->lata;
 		}
 		$this->form->wynik = number_format((float) $this->form->wynik, 2, '.', '');
+		$this->baza();
 		$this->generateView();
+}
+
+public function baza(){
+	$splata=$this->form->suma;
+	$rata=$this->form->wynik;
+	$podatek=$this->form->kwota;
+
+	$conn=mysqli_connect($this->baz->dbServername,$this->baz->dbUsername,$this->baz->dbPassword,$this->baz->dbName);
+	$sql="INSERT INTO obliczenia(Do_Splacenia,Rata,Podatek) VALUES('$splata','$rata','$podatek');";
+	$result=mysqli_query($conn, $sql);
 }
 
 public function generateView(){
